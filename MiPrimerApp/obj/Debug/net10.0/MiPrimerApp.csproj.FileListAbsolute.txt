@@ -1,0 +1,14 @@
+/home/ivanovis/Desarrollo/C#Kit/MiPrimerApp/bin/Debug/net10.0/MiPrimerApp
+/home/ivanovis/Desarrollo/C#Kit/MiPrimerApp/bin/Debug/net10.0/MiPrimerApp.deps.json
+/home/ivanovis/Desarrollo/C#Kit/MiPrimerApp/bin/Debug/net10.0/MiPrimerApp.runtimeconfig.json
+/home/ivanovis/Desarrollo/C#Kit/MiPrimerApp/bin/Debug/net10.0/MiPrimerApp.dll
+/home/ivanovis/Desarrollo/C#Kit/MiPrimerApp/bin/Debug/net10.0/MiPrimerApp.pdb
+/home/ivanovis/Desarrollo/C#Kit/MiPrimerApp/obj/Debug/net10.0/MiPrimerApp.GeneratedMSBuildEditorConfig.editorconfig
+/home/ivanovis/Desarrollo/C#Kit/MiPrimerApp/obj/Debug/net10.0/MiPrimerApp.AssemblyInfoInputs.cache
+/home/ivanovis/Desarrollo/C#Kit/MiPrimerApp/obj/Debug/net10.0/MiPrimerApp.AssemblyInfo.cs
+/home/ivanovis/Desarrollo/C#Kit/MiPrimerApp/obj/Debug/net10.0/MiPrimerApp.csproj.CoreCompileInputs.cache
+/home/ivanovis/Desarrollo/C#Kit/MiPrimerApp/obj/Debug/net10.0/MiPrimerApp.dll
+/home/ivanovis/Desarrollo/C#Kit/MiPrimerApp/obj/Debug/net10.0/refint/MiPrimerApp.dll
+/home/ivanovis/Desarrollo/C#Kit/MiPrimerApp/obj/Debug/net10.0/MiPrimerApp.pdb
+/home/ivanovis/Desarrollo/C#Kit/MiPrimerApp/obj/Debug/net10.0/MiPrimerApp.genruntimeconfig.cache
+/home/ivanovis/Desarrollo/C#Kit/MiPrimerApp/obj/Debug/net10.0/ref/MiPrimerApp.dll

@@ -1,0 +1,14 @@
+/home/ivanovis/Desarrollo/C#Kit/HolaMundo/bin/Debug/net8.0/HolaMundo
+/home/ivanovis/Desarrollo/C#Kit/HolaMundo/bin/Debug/net8.0/HolaMundo.deps.json
+/home/ivanovis/Desarrollo/C#Kit/HolaMundo/bin/Debug/net8.0/HolaMundo.runtimeconfig.json
+/home/ivanovis/Desarrollo/C#Kit/HolaMundo/bin/Debug/net8.0/HolaMundo.dll
+/home/ivanovis/Desarrollo/C#Kit/HolaMundo/bin/Debug/net8.0/HolaMundo.pdb
+/home/ivanovis/Desarrollo/C#Kit/HolaMundo/obj/Debug/net8.0/HolaMundo.GeneratedMSBuildEditorConfig.editorconfig
+/home/ivanovis/Desarrollo/C#Kit/HolaMundo/obj/Debug/net8.0/HolaMundo.AssemblyInfoInputs.cache
+/home/ivanovis/Desarrollo/C#Kit/HolaMundo/obj/Debug/net8.0/HolaMundo.AssemblyInfo.cs
+/home/ivanovis/Desarrollo/C#Kit/HolaMundo/obj/Debug/net8.0/HolaMundo.csproj.CoreCompileInputs.cache
+/home/ivanovis/Desarrollo/C#Kit/HolaMundo/obj/Debug/net8.0/HolaMundo.dll
+/home/ivanovis/Desarrollo/C#Kit/HolaMundo/obj/Debug/net8.0/refint/HolaMundo.dll
+/home/ivanovis/Desarrollo/C#Kit/HolaMundo/obj/Debug/net8.0/HolaMundo.pdb
+/home/ivanovis/Desarrollo/C#Kit/HolaMundo/obj/Debug/net8.0/HolaMundo.genruntimeconfig.cache
+/home/ivanovis/Desarrollo/C#Kit/HolaMundo/obj/Debug/net8.0/ref/HolaMundo.dll
