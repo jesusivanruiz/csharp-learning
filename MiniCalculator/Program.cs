@@ -23,11 +23,19 @@ namespace MiniCalculator
             List<string> operations = new List<string> { };
             while (MiniCalculator)
             {
-                foreach (string operationhist in operations)
+                Console.WriteLine("Welcome to the Mini Calculator!");
+                Console.WriteLine("OPERATIONS HISTORY");
+                if (operations.Count == 0)
                 {
-                    Console.WriteLine($"Operation: {operationhist}");
+                    Console.WriteLine("No operations in history.");
                 }
-
+                else
+                {
+                    foreach (string operationhist in operations)
+                    {
+                        Console.WriteLine($"{operationhist}");
+                    }
+                }
                 while (firstInputValid)
                 {
                     Console.WriteLine("Enter the first number:");
@@ -114,26 +122,21 @@ namespace MiniCalculator
                         {
                             case "+":
                                 result = num1 + num2;
-                                Console.WriteLine($"{result}");
+                                Console.WriteLine($"Result: {result}");
                                 break;
                             case "-":
                                 result = num1 - num2;
-                                Console.WriteLine($"{result}");
+                                Console.WriteLine($"Result: {result}");
                                 break;
                             case "*":
                                 result = num1 * num2;
-                                Console.WriteLine($"{result}");
+                                Console.WriteLine($"Result: {result}");
                                 break;
                             case "/":
-                                if (num2 != 0)
-                                {
-                                    result = num1 / num2;
-                                    Console.WriteLine($"{result}");
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Error: Division by zero is not allowed.");
-                                }
+
+                                result = num1 / num2;
+                                Console.WriteLine($"Result: {result}");
+
                                 continue;
                         }
                     }
@@ -177,6 +180,8 @@ namespace MiniCalculator
                             secondInputValid = false;
                             thirdInputValid = false;
                             Console.WriteLine("Operation added to history.");
+                            Console.WriteLine("============PRESS ENTER TO CONTINUE===============================");
+                            Console.ReadLine();
                             break;
                     }
 
