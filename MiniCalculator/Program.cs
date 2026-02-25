@@ -6,10 +6,9 @@ namespace MiniCalculator
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Mini Calculator!");
-            Console.WriteLine("Type \"exit\" to quit the calculator at any time.\n");
 
-            bool MiniCalculator = true,
+
+            bool isRunning = true,
                 firstInputValid = true,
                 secondInputValid = false,
                 thirdInputValid = false;
@@ -21,9 +20,11 @@ namespace MiniCalculator
                 num1 = 0,
                 num2 = 0;
             List<string> operations = new List<string> { };
-            while (MiniCalculator)
+            while (isRunning)
             {
-                Console.WriteLine("Welcome to the Mini Calculator!");
+                Console.WriteLine("##############################\n");
+                Console.WriteLine("Welcome to the Mini Calculator! \n");
+                Console.WriteLine("Type \"exit\" to quit the calculator at any time.\n");
                 Console.WriteLine("OPERATIONS HISTORY");
                 if (operations.Count == 0)
                 {
@@ -36,6 +37,8 @@ namespace MiniCalculator
                         Console.WriteLine($"{operationhist}");
                     }
                 }
+                Console.WriteLine("----------------------------------\n \n");
+
                 while (firstInputValid)
                 {
                     Console.WriteLine("Enter the first number:");
@@ -58,7 +61,7 @@ namespace MiniCalculator
                         firstInput = firsInputSwitched;
                         if (firstInput == "exit")
                         {
-                            MiniCalculator = false;
+                            isRunning = false;
                             firstInputValid = false;
                             Console.WriteLine("Exiting the Mini Calculator. Goodbye!");
                         }
@@ -90,9 +93,9 @@ namespace MiniCalculator
 
                     if (secondInput == "exit")
                     {
-                        MiniCalculator = false;
+                        isRunning = false;
                         Console.WriteLine("Exiting the Mini Calculator. Goodbye!");
-                        continue; // Salir del ciclo actual y volver a la condición del while
+                        break; // Salir del ciclo actual y volver a la condición del while
                     }
                     else if (secondInput == "InvalidInput")
                     {
@@ -115,7 +118,9 @@ namespace MiniCalculator
 
                     if (double.TryParse(thirdInput, out double thirdInputParsed))
                     {
-                        Console.WriteLine($"MINI-CALCULATOR:\n {num1} {secondInput} {thirdInputParsed}");
+                        Console.WriteLine(
+                            $"MINI-CALCULATOR:\n {num1} {secondInput} {thirdInputParsed}"
+                        );
                         num2 = thirdInputParsed;
                         thirdInputValid = false; // Salir del ciclo de validación
                         switch (secondInput)
@@ -133,11 +138,15 @@ namespace MiniCalculator
                                 Console.WriteLine($"Result: {result}");
                                 break;
                             case "/":
-
+                                if (num2 == 0)
+                                {
+                                    Console.WriteLine("Error: cannot divide by zero.");
+                                    thirdInputValid = true; // volver a pedir el número
+                                    continue;
+                                }
                                 result = num1 / num2;
                                 Console.WriteLine($"Result: {result}");
-
-                                continue;
+                                break;
                         }
                     }
                     else
@@ -151,7 +160,8 @@ namespace MiniCalculator
                         thirdInput = thirdInputSwitched;
                         if (thirdInput == "exit")
                         {
-                            MiniCalculator = false;
+                            isRunning = false;
+                            Console.WriteLine("Exiting the Mini Calculator. Goodbye!");
                             break;
                         }
                         else if (thirdInput == "InvalidInput")
@@ -162,29 +172,23 @@ namespace MiniCalculator
                             continue; // Salir del ciclo actual y volver a la condición del while
                         }
                     }
-
                 }
-                if (firstInputValid == false && secondInputValid == false && thirdInputValid == false)
+                if (
+                    firstInputValid == false
+                    && secondInputValid == false
+                    && thirdInputValid == false
+                )
                 {
                     operations.Add($"{num1} {secondInput} {num2} = {result}");
-                    switch (operations.Count)
-                    {
-                        case 0:
-                            Console.WriteLine("No operations in history.");
-                            firstInputValid = true;
-                            secondInputValid = false;
-                            thirdInputValid = false;
-                            break;
-                        case > 0:
-                            firstInputValid = true;
-                            secondInputValid = false;
-                            thirdInputValid = false;
-                            Console.WriteLine("Operation added to history.");
-                            Console.WriteLine("============PRESS ENTER TO CONTINUE===============================");
-                            Console.ReadLine();
-                            break;
-                    }
-
+                    // Reiniciar las variables para la siguiente operación
+                    firstInputValid = true;
+                    secondInputValid = false;
+                    thirdInputValid = false;
+                    num1 = 0;
+                    num2 = 0;
+                    result = 0;
+                    Console.WriteLine("Press Enter to continue...");
+                    Console.ReadLine();
                 }
             }
         }
