@@ -1,0 +1,94 @@
+﻿namespace MiniCalculator
+{
+    class Calculator
+    {
+        static void Main(string[] args)
+        {
+            double result = 0, parsedNum1 = 0, parsedNum2 = 0;
+            string operationFirstInput = "", operationSecondInput = "", operationThirdInput = "", operationSecondInputSwitched = "";
+            List<string> operations = new List<string> { "+", "-", "*", "/" };
+            bool MiniCalculator = true;
+            Console.WriteLine("Welcome to the Mini Calculator!");
+
+            //FIRST NUMBER INPUT -------------------------------------------------------------------------
+            while (MiniCalculator)
+            {
+                Console.Write("Enter the first number: ");
+                operationFirstInput = Console.ReadLine() ?? "NULL";
+
+                if (double.TryParse(operationFirstInput, out parsedNum1))
+                {
+                    Console.WriteLine($"First number: {parsedNum1} added successfully.\n Now enter the operator: (+,-,*,/)");
+                    operationSecondInput = Console.ReadLine() ?? "NULL";
+                    operationSecondInputSwitched = operationSecondInput switch
+                    {
+                        "exit" or "quit" => "exit",
+                        "+" => "plus",
+                        "-" => "minus",
+                        "*" => "multiply",
+                        "/" => "divide",
+                        _ => "InvalidInput"
+                        // _ es el default en esta sintaxis
+                    };
+                }
+                else if (operationFirstInput.ToLower() == "exit")
+                {
+                    MiniCalculator = false;
+                    Console.WriteLine("Exiting the Mini Calculator. Goodbye!");
+                    continue; // Salir del ciclo actual y volver a la condición del while
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid number or 'exit' to quit.");
+                    continue; // Salir del ciclo actual y volver a la condición del while
+                }
+
+                Console.Write("Enter the second number: ");
+                operationThirdInput = Console.ReadLine() ?? "NULL";
+                if (double.TryParse(operationThirdInput, out parsedNum2))
+                {
+                    Console.WriteLine($"Second number: {parsedNum2} added successfully.");
+
+                    switch (operationSecondInputSwitched)
+                    {
+                        case "+":
+                            Console.WriteLine($"result= {parsedNum1 + parsedNum2}");
+                            break;
+                        case "-":
+                            Console.WriteLine($"result= {parsedNum1 - parsedNum2}");
+                            break;
+                        case "*":
+                            Console.WriteLine($"result= {parsedNum1 * parsedNum2}");
+                            break;
+                        case "/":
+                            Console.WriteLine($"result= {parsedNum1 / parsedNum2}");
+                            break;
+                        default:
+                            Console.WriteLine($"Invalid . Please enter a valid  (+, -, *, /).");
+                            break;
+                    }
+
+                }
+                else if (operationThirdInput.ToLower() == "exit")
+                {
+                    MiniCalculator = false;
+                    Console.WriteLine("Exiting the Mini Calculator. Goodbye!");
+                    continue; // Salir del ciclo actual y volver a la condición del while
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid number or 'exit' to quit.");
+                    continue; // Salir del ciclo actual y volver a la condición del while
+                }
+
+
+                //OPERATOR INPUT -------------------------------------------------------------------------
+                Console.Write("Enter the operation (+, -, *, /): ");
+                operationSecondInput = Console.ReadLine() ?? "NULL";
+
+                Console.Write("Enter the second number: ");
+                operationThirdInput = Console.ReadLine() ?? "NULL";
+            }
+        }
+    }
+}
